@@ -37,3 +37,17 @@ sounddetect\idiotelement.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sp
 sounddetect\idiotelement.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 sounddetect\idiotelement.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 sounddetect\idiotelement.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+sounddetect\idiotelement.o: ../Inc/FreeRTOSConfig.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

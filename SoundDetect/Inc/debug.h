@@ -9,6 +9,8 @@
 #define _DEBUG_H_
 
 #include "types.h"
+#include "triangleDriver.h"
+//#include "math_helper.h"
 
 int debug_proc(const unsigned char* cmdString, unsigned short length);
 

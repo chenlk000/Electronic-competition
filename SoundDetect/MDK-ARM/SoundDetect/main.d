@@ -34,6 +34,8 @@ sounddetect\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 sounddetect\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 sounddetect\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 sounddetect\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+sounddetect\main.o: ../Inc/app_main.h
+sounddetect\main.o: ../Inc/types.h
 sounddetect\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sounddetect\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 sounddetect\main.o: ../Inc/FreeRTOSConfig.h

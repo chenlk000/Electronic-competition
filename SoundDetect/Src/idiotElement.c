@@ -2,7 +2,7 @@
 
 #include "idiotElement.h"
 #include "usart.h"
-
+#include "cmsis_os.h"
 //typedef struct dick{
 //	short direction;
 //	short speed;
@@ -41,6 +41,7 @@ int cmdSend(char * cmd){
 //	usart_print(&huart3,cmd);
 	usart_transmit_data(&huart3, cmd, CMD_SIZE);
 	vPortFree(cmd);
+	return F_SUCCESS;
 }
 //idiotStruct* move_func(){
 //	move_struct.direction = direction;

@@ -1,4 +1,5 @@
 #include "sound_locate.h"
+
 Point dick = {0.0f,0.0f};
 
 int locatePoint(Point *calPoint,float t1,float t2){

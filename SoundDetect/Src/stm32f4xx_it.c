@@ -216,7 +216,7 @@ void TIM4_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
-	int i,j;
+	
   if(__HAL_UART_GET_FLAG(&huart1, UART_FLAG_RXNE) == SET)
   {
     msg_sendCoreCmd(CORE_USART1_RECV);

@@ -1,5 +1,5 @@
-sounddetect\sound_locate.o: sound_locate.c
-sounddetect\sound_locate.o: sound_locate.h
+sounddetect\sound_locate.o: ..\Src\sound_locate.c
+sounddetect\sound_locate.o: ../Inc/sound_locate.h
 sounddetect\sound_locate.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 sounddetect\sound_locate.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sounddetect\sound_locate.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

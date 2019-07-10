@@ -9,12 +9,14 @@
 "sounddetect\app_modem.o"
 "sounddetect\debug.o"
 "sounddetect\idiotelement.o"
-"sounddetect\timercapture.o"
 "sounddetect\main.o"
 "sounddetect\freertos.o"
 "sounddetect\stm32f4xx_it.o"
 "sounddetect\stm32f4xx_hal_msp.o"
 "sounddetect\stm32f4xx_hal_timebase_tim.o"
+"sounddetect\sound_locate.o"
+"sounddetect\timercapture.o"
+"sounddetect\triangledriver.o"
 "sounddetect\stm32f4xx_hal_adc.o"
 "sounddetect\stm32f4xx_hal_adc_ex.o"
 "sounddetect\stm32f4xx_hal_spi.o"
@@ -45,6 +47,7 @@
 "sounddetect\cmsis_os.o"
 "sounddetect\heap_4.o"
 "sounddetect\port.o"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib"
 --library_type=microlib --strict --scatter "SoundDetect\SoundDetect.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

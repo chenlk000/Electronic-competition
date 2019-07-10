@@ -13,6 +13,7 @@
 #include "log.h"
 #include "idiotElement.h"
 
+#define MAX_BLOCKSIZE   128
 #define MAX_CMD_LENGTH (16)
 #define MAX_CMD_NUMBER  (32)
 extern TIM_HandleTypeDef htim3;
@@ -24,8 +25,6 @@ typedef struct
     unsigned char cmd[MAX_CMD_LENGTH];
     CMD_ACTION  action;
 } CMD_MAP;
-
-
 
 #define DBG_OUT(fmt, ...) log_print("[DEBUG]>"fmt, ##__VA_ARGS__);log_print("\r\n")
 
@@ -74,13 +73,6 @@ static int cmd_get(const unsigned char *cmdString, unsigned short length)
     return F_FAILED;
 }
 
-static int cmd_size(const unsigned char *cmdString, unsigned short length)
-{
-
-
-    LOG_ERROR("CMD error");
-    return F_FAILED;
-}
 
 static int cmd_led(const unsigned char *cmdString, unsigned short length)
 {
@@ -94,17 +86,46 @@ static int cmd_dog(const unsigned char *cmdString, unsigned short length)
     return F_FAILED;
 }
 
-static int cmd_cnt(const unsigned char *cmdString, unsigned short length)
+static int cmd_math(const unsigned char *cmdString, unsigned short length)
 {
-
+//		float32_t Ak[MAX_BLOCKSIZE] = {0,0,1,1,1,0,0};        /* Input A */
+//		float32_t Bk[MAX_BLOCKSIZE] = {1,2,1};        /* Input B */
+//		float32_t AxB[MAX_BLOCKSIZE * 2];   /* Output */
+		int i,j;
 	
-    LOG_ERROR("CMD error");
+		const float32_t xRef_f16[4] = {1,1,1,1};
+		const float32_t yRef_f16[4] = {1,2,3,4};
+		float32_t AB_f32[16];
+		arm_status status;
+		
+		arm_matrix_instance_f32 X;      /* Matrix A Instance */
+		arm_matrix_instance_f32 Y;     /* Matrix AT(A transpose) instance */
+		arm_matrix_instance_f32 XY;   /* Matrix ATMA( AT multiply with A) instance */
+		uint32_t srcRows, srcColumns; /* Temporary variables */
+		srcRows = 4;
+		srcColumns = 4;
+		
+		arm_mat_init_f32(&Y, 1, srcColumns, (float32_t *)xRef_f16);
+		arm_mat_init_f32(&X, srcRows, 1, (float32_t *)yRef_f16);
+		arm_mat_init_f32(&XY, srcRows, srcColumns, (float32_t *)AB_f32);
+		
+		status = arm_mat_mult_f32(&X, &Y, &XY);
+		
+		LOG_PRINT("status = %d",status);
+		for(i=0;i<XY.numRows;i++){
+			for(j=0;j<XY.numCols;j++){
+			LOG_PRINT("XY[%d][%d] = %4f",i,j,*(XY.pData+j*XY.numCols+i));
+			}
+		}
+		
+		
+    LOG_PRINT("multiple ok");
     return F_FAILED;
 }
 
 static int cmd_dds(const unsigned char *cmdString, unsigned short length)
 {
-
+	return F_FAILED;
 }
 static int cmd_move(const unsigned char * cmdString, unsigned short length)
 {
@@ -124,6 +145,7 @@ static int cmd_move(const unsigned char * cmdString, unsigned short length)
 				
 }
 
+
 static CMD_MAP cmd_map[] =
 {
         {"debug",       cmd_debug},
@@ -135,7 +157,7 @@ static CMD_MAP cmd_map[] =
         {"start",       cmd_start},
         {"stop",        cmd_stop},
         {"get",         cmd_get},
-        {"size",        cmd_size},
+        {"math",        cmd_math},
         {"led",         cmd_led},
         {"dog",         cmd_dog},
         {"dds",         cmd_dds},
