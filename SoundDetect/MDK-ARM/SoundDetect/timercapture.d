@@ -51,3 +51,7 @@ sounddetect\timercapture.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ti
 sounddetect\timercapture.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 sounddetect\timercapture.o: ../Inc/timer.h
 sounddetect\timercapture.o: ../Inc/log.h
+sounddetect\timercapture.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+sounddetect\timercapture.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+sounddetect\timercapture.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sounddetect\timercapture.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

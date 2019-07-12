@@ -2,3 +2,11 @@ sounddetect\timer.o: ..\Src\timer.c
 sounddetect\timer.o: ../Inc/timer.h
 sounddetect\timer.o: ../Inc/types.h
 sounddetect\timer.o: ../Inc/log.h
+sounddetect\timer.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+sounddetect\timer.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+sounddetect\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sounddetect\timer.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+sounddetect\timer.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+sounddetect\timer.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+sounddetect\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sounddetect\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

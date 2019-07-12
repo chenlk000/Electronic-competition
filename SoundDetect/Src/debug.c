@@ -8,7 +8,7 @@
 #include <string.h>
 
 #include "stm32f4xx_hal.h"
-
+#include "timer.h"
 #include "debug.h"
 #include "log.h"
 #include "idiotElement.h"
@@ -16,8 +16,11 @@
 #define MAX_BLOCKSIZE   128
 #define MAX_CMD_LENGTH (16)
 #define MAX_CMD_NUMBER  (32)
+#define HEATBEAT_GAP 5000
 extern TIM_HandleTypeDef htim3;
-
+char moving = 0;
+char gyro = 0;
+	
 typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
 
 typedef struct
@@ -123,8 +126,68 @@ static int cmd_math(const unsigned char *cmdString, unsigned short length)
     return F_FAILED;
 }
 
-static int cmd_dds(const unsigned char *cmdString, unsigned short length)
+
+static int gyro_stop(void)
 {
+		char * movecmd;
+	  gyro = 0;
+		movecmd = config_write(0); //open gyro stable
+		cmdSend(movecmd,CONFIG_SIZE);
+    return F_SUCCESS;
+}
+
+static int gyro_start(void)
+{
+		char * movecmd;
+	  gyro = 1;
+		movecmd = config_write(1); //open gyro stable
+		cmdSend(movecmd,CONFIG_SIZE);
+    return F_SUCCESS;
+}
+
+static int moveover(void){
+	moving = 0;
+	char * movecmd;
+	movecmd = cmd_write(0, 0, 3 , HEATBEAT_GAP);
+	cmdSend(movecmd,CMD_SIZE);
+	
+	
+	return F_SUCCESS;
+}
+
+static int heart_beat(void){
+		char * movecmd;
+		if(!moving){
+			if(gyro == 1)
+			{	
+				movecmd = cmd_write(0, 0, 3 , HEATBEAT_GAP);
+				cmdSend(movecmd,CMD_SIZE);
+			}
+				LOG_PRINT("HEAR_BEAT");
+		}
+		timer_start(TIMER_HEART, HEATBEAT_GAP, heart_beat);
+		return F_SUCCESS;
+}
+
+static int cmd_gyro(const unsigned char *cmdString, unsigned short length)
+{
+	int flag ;
+	int rc = 0 ;
+	char * config_cmd;
+	rc = sscanf((char *)cmdString, "gyro:%d", &flag);
+	if(rc == 1){
+			config_cmd = config_write(flag);
+			if(flag){
+				gyro_start();
+			}
+			else{
+				gyro_stop();
+			}
+			cmdSend(config_cmd,CONFIG_SIZE);
+	}
+	else{
+		LOG_ERROR("PARAMETE ERROR\r\n");
+	}
 	return F_FAILED;
 }
 static int cmd_move(const unsigned char * cmdString, unsigned short length)
@@ -134,18 +197,23 @@ static int cmd_move(const unsigned char * cmdString, unsigned short length)
 	  char * movecmd;
 		rc = sscanf((char *)cmdString, "move:%d,%d,%d,%d", &direction, &speed, &yaw, &time);
 		if(rc==4){
-			movecmd = cmd_write(direction, speed, yaw, time);
-			cmdSend(movecmd);
+			moving = 1;
+			gyro_start();
+			
+			movecmd = cmd_write(direction, speed, yaw , time);
+			cmdSend(movecmd,CMD_SIZE);
+			
+			timer_start(TIMER_HEART,time,heart_beat);
+			timer_start(TIMER_MOVE_OVER,time,moveover);
 			return 0;
 		}
 		else{
 			LOG_ERROR("MOVE PARAMETER ERROR\r\n");
 			return 1;
 		}
-				
 }
 
-
+	
 static CMD_MAP cmd_map[] =
 {
         {"debug",       cmd_debug},
@@ -160,12 +228,12 @@ static CMD_MAP cmd_map[] =
         {"math",        cmd_math},
         {"led",         cmd_led},
         {"dog",         cmd_dog},
-        {"dds",         cmd_dds},
+        {"gyro",        cmd_gyro},
 };
 
 
-static int cmd_debug(const unsigned char* cmdString, unsigned short length)
-{
+static int cmd_debug(const unsigned char* cmdString, unsigned short length){
+
     int i = 0;
     DBG_OUT("support cmd:");
     for (i = 0; i < sizeof(cmd_map) / sizeof(cmd_map[0]) && cmd_map[i].action; i++)

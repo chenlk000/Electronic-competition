@@ -9,6 +9,7 @@
 #define _DEBUG_H_
 
 #include "types.h"
+#include "arm_math.h"
 #include "triangleDriver.h"
 //#include "math_helper.h"
 

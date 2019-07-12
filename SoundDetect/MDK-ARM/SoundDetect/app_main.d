@@ -50,12 +50,12 @@ sounddetect\app_main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event
 sounddetect\app_main.o: ../Inc/app_main.h
 sounddetect\app_main.o: ../Inc/types.h
 sounddetect\app_main.o: ../Inc/log.h
-sounddetect\app_main.o: ../Inc/msg.h
-sounddetect\app_main.o: ../Inc/debug.h
-sounddetect\app_main.o: ../Inc/triangleDriver.h
 sounddetect\app_main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
 sounddetect\app_main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
 sounddetect\app_main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 sounddetect\app_main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+sounddetect\app_main.o: ../Inc/msg.h
+sounddetect\app_main.o: ../Inc/debug.h
+sounddetect\app_main.o: ../Inc/triangleDriver.h
 sounddetect\app_main.o: ../Inc/usart.h
 sounddetect\app_main.o: ../Inc/timer.h

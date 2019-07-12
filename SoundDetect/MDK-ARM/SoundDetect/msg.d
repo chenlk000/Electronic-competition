@@ -19,3 +19,9 @@ sounddetect\msg.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sounddetect\msg.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sounddetect\msg.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 sounddetect\msg.o: ../Inc/log.h
+sounddetect\msg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+sounddetect\msg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+sounddetect\msg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+sounddetect\msg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+sounddetect\msg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+sounddetect\msg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

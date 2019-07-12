@@ -51,3 +51,8 @@ sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/t
 sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sounddetect\idiotelement.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+sounddetect\idiotelement.o: ../Inc/log.h
+sounddetect\idiotelement.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+sounddetect\idiotelement.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+sounddetect\idiotelement.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sounddetect\idiotelement.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

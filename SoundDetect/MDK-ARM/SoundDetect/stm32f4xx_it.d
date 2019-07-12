@@ -34,8 +34,6 @@ sounddetect\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sp
 sounddetect\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 sounddetect\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 sounddetect\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-sounddetect\stm32f4xx_it.o: ../Inc/app_main.h
-sounddetect\stm32f4xx_it.o: ../Inc/types.h
 sounddetect\stm32f4xx_it.o: ../Inc/stm32f4xx_it.h
 sounddetect\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sounddetect\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
@@ -51,11 +49,14 @@ sounddetect\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/t
 sounddetect\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sounddetect\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sounddetect\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+sounddetect\stm32f4xx_it.o: ../Inc/types.h
 sounddetect\stm32f4xx_it.o: ../Inc/usart.h
 sounddetect\stm32f4xx_it.o: ../Inc/msg.h
 sounddetect\stm32f4xx_it.o: ../Inc/debug.h
-sounddetect\stm32f4xx_it.o: ../Inc/triangleDriver.h
 sounddetect\stm32f4xx_it.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
 sounddetect\stm32f4xx_it.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
 sounddetect\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 sounddetect\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+sounddetect\stm32f4xx_it.o: ../Inc/triangleDriver.h
+sounddetect\stm32f4xx_it.o: ../Inc/log.h
+sounddetect\stm32f4xx_it.o: ../Inc/timer.h

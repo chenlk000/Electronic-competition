@@ -8,3 +8,5 @@ sounddetect\triangledriver.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\
 sounddetect\triangledriver.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
 sounddetect\triangledriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 sounddetect\triangledriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+sounddetect\triangledriver.o: ../Inc/types.h
+sounddetect\triangledriver.o: ../Inc/log.h

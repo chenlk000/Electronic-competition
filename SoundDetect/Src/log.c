@@ -10,11 +10,14 @@
 
 #include "types.h"
 #include "usart.h"
-
+#include "arm_math.h"
 #include <time.h>
 #include <string.h>
 #include <stdarg.h>
 
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
+extern UART_HandleTypeDef huart3;
 /*
  * @function 获得level的打印名
  * @param level level级别
@@ -46,6 +49,35 @@ void log_print(const char *fmt, ...)
     usart_transmit_data(&huart1, data, length);
 }
 
+void log_print2(const char *fmt, ...)
+{
+    va_list arg;
+    u16 length = 0;
+    u8 data[UART_TX_BUF_LEN] = {0};
+
+    va_start(arg, fmt);
+    vsnprintf((char *)data, UART_TX_BUF_LEN, fmt, arg);
+    va_end(arg);
+
+    length = strlen((const char *)data);
+
+    usart_transmit_data(&huart2, data, length);
+}
+
+void log_print3(const char *fmt, ...)
+{
+    va_list arg;
+    u16 length = 0;
+    u8 data[UART_TX_BUF_LEN] = {0};
+
+    va_start(arg, fmt);
+    vsnprintf((char *)data, UART_TX_BUF_LEN, fmt, arg);
+    va_end(arg);
+
+    length = strlen((const char *)data);
+
+    usart_transmit_data(&huart3, data, length);
+}
 /*
  * The hex log is in the following format:
  *
@@ -176,6 +208,16 @@ void print_currentTime(void)
               currentTm->tm_min,
               currentTm->tm_sec);
 }
+
+void print_matrix_f32(arm_matrix_instance_f32 * matrix){
+		int i,j;
+			for(i=0;i<matrix->numRows;i++){
+				for(j=0;j<matrix->numCols;j++){
+					LOG_PRINT("XY[%d][%d] = %4f",i,j,*(matrix->pData+j*matrix->numCols+i));
+			}
+		}
+}
+
 
 u8 *get_currentTaskName(void)
 {

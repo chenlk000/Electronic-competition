@@ -53,6 +53,7 @@ static int main_usart5Recv(const TASK_MSG *msg){
 
 
 static int main_msgproc(const TASK_MSG *msg){
+	
 	short t1,t2,t3;
 	
 	t1 = msg->data[0] + (msg->data[1]<<8);

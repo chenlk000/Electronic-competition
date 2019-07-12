@@ -19,4 +19,11 @@ sounddetect\app_modem.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semp
 sounddetect\app_modem.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 sounddetect\app_modem.o: ../Inc/msg.h
 sounddetect\app_modem.o: ../Inc/log.h
+sounddetect\app_modem.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+sounddetect\app_modem.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+sounddetect\app_modem.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+sounddetect\app_modem.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+sounddetect\app_modem.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+sounddetect\app_modem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sounddetect\app_modem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 sounddetect\app_modem.o: ../Inc/timer.h

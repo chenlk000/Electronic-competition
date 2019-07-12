@@ -3,6 +3,8 @@
 #include "idiotElement.h"
 #include "usart.h"
 #include "cmsis_os.h"
+#include "log.h"
+
 //typedef struct dick{
 //	short direction;
 //	short speed;
@@ -37,9 +39,40 @@ char* cmd_write(short direction, short speed, short yaw, short time){
 	return cmd;
 }
 
-int cmdSend(char * cmd){
+char* config_write(short state){
+	int i;
+	char check = 0;
+	char *cmd = (char *)pvPortMalloc(CMD_SIZE);
+  cmd[0] = 0xF5;
+  cmd[1] = 0x5F;
+  cmd[2] = 0x08;
+  cmd[3] = 0x01;
+	cmd[4] = 0x01;
+	switch(state){
+		case GYRO_ON: 
+			cmd[5] = 0x02;
+			LOG_PRINT("GYRO ON");	
+			break;
+		case GYRO_OFF:
+			cmd[5] = 0x00;
+			LOG_PRINT("GYRO OFF");	
+			break;
+		default:
+			LOG_PRINT("GYRO OFF");
+			cmd[5] = 0x00;
+	}
+			
+	
+	for(i=2;i<6;i++)
+		check = check + cmd[i];
+	cmd[6] = 0xFF & ~check;
+	
+	return cmd;
+}
+
+int cmdSend(char * cmd , char length){
 //	usart_print(&huart3,cmd);
-	usart_transmit_data(&huart3, cmd, CMD_SIZE);
+	usart_transmit_data(&huart3, cmd, length);
 	vPortFree(cmd);
 	return F_SUCCESS;
 }

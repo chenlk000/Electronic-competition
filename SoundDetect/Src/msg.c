@@ -38,6 +38,11 @@ int msg_sendCmd(TASK_ENUM task, TASK_MSG_ENUM cmd)
     }
 }
 
+int msg_sendDSPCmd(void)
+{
+		msg_sendCmd(APP_MODEM, DSP_START);
+}
+
 int msg_sendData(TASK_ENUM task, TASK_MSG_ENUM cmd, u8 *data, u8 length)
 {
     TASK_MSG *pMsg = (TASK_MSG *)pvPortMalloc(sizeof(TASK_MSG) + length + 1);

@@ -35,11 +35,12 @@ sounddetect\debug.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 sounddetect\debug.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 sounddetect\debug.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 sounddetect\debug.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-sounddetect\debug.o: ../Inc/debug.h
+sounddetect\debug.o: ../Inc/timer.h
 sounddetect\debug.o: ../Inc/types.h
-sounddetect\debug.o: ../Inc/triangleDriver.h
+sounddetect\debug.o: ../Inc/debug.h
 sounddetect\debug.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
 sounddetect\debug.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
 sounddetect\debug.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+sounddetect\debug.o: ../Inc/triangleDriver.h
 sounddetect\debug.o: ../Inc/log.h
 sounddetect\debug.o: ../Inc/idiotElement.h

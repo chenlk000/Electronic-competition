@@ -7,6 +7,7 @@
 //#include "arm_math.h"
 
 #define MSG_TIME_OUT 1000
+
 static int msgall_timeout(void);
 extern TIM_HandleTypeDef htim3;
 short data[3];
@@ -53,6 +54,7 @@ static int msgall_timeout(void)
 		TIM_CCxChannelCmd(htim3.Instance, TIM_CHANNEL_1|TIM_CHANNEL_2|TIM_CHANNEL_3, TIM_CCx_ENABLE);
     return F_SUCCESS;
 }
+
 
 //static int msgall_process(TASK_MSG *pMsg){
 

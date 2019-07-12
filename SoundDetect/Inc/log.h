@@ -7,6 +7,8 @@
 #ifndef _LOG_H_
 #define _LOG_H_
 
+#include "arm_math.h"
+
 #define DEBUG
 
 #define LOG_HEX(data, length) log_hex(data, length)
@@ -81,7 +83,8 @@ void log_binary(const void *data, int length);
  * @param ... 不定变量
  */
 void log_print(const char *fmt, ...);
-
+void log_print2(const char *fmt, ...);
+void log_print3(const char *fmt, ...);
 /*
  * @function 打印日志头部信息
  * @param level 日志等级
@@ -93,5 +96,7 @@ void log_header(LOG_LEVEL level);
  * @param fileName 文件名
  */
 const char *splitFileName(const char *fileName);
+
+void print_matrix_f32(arm_matrix_instance_f32 * matrix);
 
 #endif // !_LOG_H_

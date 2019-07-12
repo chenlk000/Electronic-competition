@@ -2,6 +2,14 @@ sounddetect\app_core.o: ..\Src\app_core.c
 sounddetect\app_core.o: ../Inc/app_core.h
 sounddetect\app_core.o: ../Inc/types.h
 sounddetect\app_core.o: ../Inc/log.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sounddetect\app_core.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 sounddetect\app_core.o: ../Inc/usart.h
 sounddetect\app_core.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 sounddetect\app_core.o: ../Inc/stm32f4xx_hal_conf.h
@@ -10,10 +18,6 @@ sounddetect\app_core.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 sounddetect\app_core.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 sounddetect\app_core.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 sounddetect\app_core.o: ../Drivers/CMSIS/Include/core_cm4.h
-sounddetect\app_core.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-sounddetect\app_core.o: ../Drivers/CMSIS/Include/cmsis_version.h
-sounddetect\app_core.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-sounddetect\app_core.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 sounddetect\app_core.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 sounddetect\app_core.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 sounddetect\app_core.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
