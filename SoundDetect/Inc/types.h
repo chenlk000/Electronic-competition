@@ -66,6 +66,7 @@ typedef enum
     KEY_1_PRESS,
     FEED_DOG,
     MSGALL_ARRIVE,
+		MSGALL_ARRIVE_D,
     DSP_START,
     GET_MEASURE_DATA,
     TASK_MSG_NUM

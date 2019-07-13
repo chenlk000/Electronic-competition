@@ -60,3 +60,6 @@ sounddetect\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 sounddetect\stm32f4xx_it.o: ../Inc/triangleDriver.h
 sounddetect\stm32f4xx_it.o: ../Inc/log.h
 sounddetect\stm32f4xx_it.o: ../Inc/timer.h
+sounddetect\stm32f4xx_it.o: ../Inc/dsp_filter.h
+sounddetect\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+sounddetect\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

@@ -1,0 +1,16 @@
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
+sounddetect\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+sounddetect\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+sounddetect\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+sounddetect\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sounddetect\tasks.o: ../Inc/FreeRTOSConfig.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+sounddetect\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h

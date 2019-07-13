@@ -48,3 +48,11 @@ sounddetect\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 sounddetect\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sounddetect\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sounddetect\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+sounddetect\main.o: ../Inc/dsp_filter.h
+sounddetect\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+sounddetect\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+sounddetect\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+sounddetect\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+sounddetect\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+sounddetect\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sounddetect\main.o: ../Inc/log.h

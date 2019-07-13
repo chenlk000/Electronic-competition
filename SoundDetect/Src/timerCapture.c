@@ -7,6 +7,7 @@
 //#include "arm_math.h"
 
 #define MSG_TIME_OUT 1000
+#define MSG_D_TIME_OUT 1000
 
 static int msgall_timeout(void);
 extern TIM_HandleTypeDef htim3;
@@ -14,10 +15,6 @@ short data[3];
 char captureFlag = 0;
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
-
-//	if((htim->Instance->DIER & TIM_IT_UPDATE) == 0)
-//		HAL_TIM_Base_Start_IT(htim);
-
 	
 	if(htim->Instance->CNT==0 && captureFlag == 0){
 		htim->Instance->CR1 |= 1<<0; //start counting 

@@ -30,6 +30,7 @@
 #include "debug.h"
 #include "log.h"
 #include "timer.h"
+#include "dsp_filter.h"
 
 /* USER CODE END Includes */
 
@@ -65,6 +66,7 @@ extern volatile uint16_t adc_buffer[3*1024];
 
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
+extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim8;
 extern UART_HandleTypeDef huart1;
@@ -173,6 +175,20 @@ void DebugMon_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles TIM1 update interrupt and TIM10 global interrupt.
+  */
+void TIM1_UP_TIM10_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 0 */
+
+  /* USER CODE END TIM1_UP_TIM10_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim1);
+  /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */
+
+  /* USER CODE END TIM1_UP_TIM10_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM3 global interrupt.
   */
 void TIM3_IRQHandler(void)
@@ -273,17 +289,19 @@ void DMA2_Stream0_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA2_Stream0_IRQn 0 */
 	static short cnt = 0;
-  /* USER CODE END DMA2_Stream0_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_adc1);
-  /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
-	LOG_PRINT("CNT = %d ,DMA[0] = %x ,DMA[FULL-1] = %x",cnt,adc_buffer[0],adc_buffer[1024*3-1]);
-//	log_print2("%f\n",(float)adc_buffer[0]);
-	if(1 == cnt){
+		if(1 == cnt){
 		cnt = 0;
+		htim8.Instance->CR1 &= 0<<0; //stop trans
 		timer_start(TIMER_DSP_GAP,1,msg_sendDSPCmd);
 	}
 	else
 		cnt++ ;
+  /* USER CODE END DMA2_Stream0_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_adc1);
+  /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
+//	LOG_PRINT("CNT = %d ,DMA[0] = %x ,DMA[FULL-1] = %x",cnt,adc_buffer[0],adc_buffer[SAMPLE_NUM*3-1]);
+//	log_print2("%f\n",(float)adc_buffer[0]);
+
 	
 	
   /* USER CODE END DMA2_Stream0_IRQn 1 */

@@ -1,0 +1,13 @@
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_5.c
+sounddetect\heap_5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+sounddetect\heap_5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+sounddetect\heap_5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sounddetect\heap_5.o: ../Inc/FreeRTOSConfig.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+sounddetect\heap_5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

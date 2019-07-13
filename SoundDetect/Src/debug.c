@@ -20,7 +20,8 @@
 extern TIM_HandleTypeDef htim3;
 char moving = 0;
 char gyro = 0;
-	
+extern short point_per_period;
+
 typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
 
 typedef struct
@@ -40,10 +41,25 @@ static int cmd_AT(const unsigned char* cmdString, unsigned short length)
     return F_SUCCESS;
 }
 
-static int cmd_flash(const unsigned char *cmdString, unsigned short length)
+static int cmd_freqDiv(const unsigned char *cmdString, unsigned short length)
 {
+		int rc = 0 ;
+		char * config_cmd;
+		unsigned int freq;
+	rc = sscanf((char *)cmdString, "freqDiv:%d", &freq);
+	
+		if(rc == 1){
+			point_per_period = freq;
+			LOG_PRINT("Freq div is on %d",freq);
+			return F_SUCCESS;
+		}
+		else{
+			
 
-    return F_FAILED;
+			return F_FAILED;
+		}
+		
+    
 }
 
 static int cmd_data(const unsigned char *cmdString, unsigned short length)
@@ -52,9 +68,9 @@ static int cmd_data(const unsigned char *cmdString, unsigned short length)
     return F_FAILED;
 }
 
-static int cmd_setting(const unsigned char *cmdString, unsigned short length)
+static int cmd_testone(const unsigned char *cmdString, unsigned short length)
 {
-
+		
     return F_FAILED;
 }
 
@@ -219,9 +235,8 @@ static CMD_MAP cmd_map[] =
         {"debug",       cmd_debug},
         {"AT",          cmd_AT},
         {"move",        cmd_move},
-        {"flash",       cmd_flash},
+        {"freqDiv",     cmd_freqDiv},
         {"data",        cmd_data},
-        {"setting",     cmd_setting},
         {"start",       cmd_start},
         {"stop",        cmd_stop},
         {"get",         cmd_get},
@@ -229,6 +244,7 @@ static CMD_MAP cmd_map[] =
         {"led",         cmd_led},
         {"dog",         cmd_dog},
         {"gyro",        cmd_gyro},
+				
 };
 
 

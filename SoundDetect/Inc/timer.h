@@ -16,6 +16,7 @@
 #define TIMER_MOVE_OVER TIMER_11
 #define TIMER_HEART TIMER_12
 #define TIMER_DSP_GAP TIMER_13
+#define TIMER_MSGALL_D_TIMEROUT TIMER_14
 
 
 typedef int (*TIMER_CB)(void);

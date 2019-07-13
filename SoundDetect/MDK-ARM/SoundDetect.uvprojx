@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>ARM_MATH_CM4,STM32F407xx,USE_HAL_DRIVER,USE_STDPERIPH_DRIVER,__CC_ARM,ARM_MATH_M</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                       ../Drivers/STM32F4xx_HAL_Driver/Inc;                       ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                       ../Middlewares/Third_Party/FreeRTOS/Source/include;                       ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                       ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;                       ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                       ../Drivers/CMSIS/Include;                       C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;                       ..\Inc;                       C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Lib\ARM</IncludePath>
+              <IncludePath>../Inc;                          ../Drivers/STM32F4xx_HAL_Driver/Inc;                          ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                          ../Middlewares/Third_Party/FreeRTOS/Source/include;                          ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                          ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;                          ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                          ../Drivers/CMSIS/Include;                          C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;                          ..\Inc;                          C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Lib\ARM</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
